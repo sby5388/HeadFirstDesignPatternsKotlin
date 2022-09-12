@@ -9,7 +9,11 @@ class Mocha(private val beverage: Beverage) : CondimentDecorator() {
         set(value) {}
 
     override fun cost(): Double {
-        return 0.20 + beverage.cost()
+        return beverage.cost() + when (size) {
+            CoffeeSize.TALL -> 0.15
+            CoffeeSize.GRANDE -> 0.20
+            CoffeeSize.VENTI -> 0.25
+        }
     }
 
 

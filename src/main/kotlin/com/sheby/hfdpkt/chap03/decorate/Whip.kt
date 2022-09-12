@@ -5,7 +5,11 @@ package com.sheby.hfdpkt.chap03.decorate
  */
 class Whip(private val beverage: Beverage) : CondimentDecorator() {
     override fun cost(): Double {
-        return 0.10 + beverage.cost()
+        return beverage.cost() + when (size) {
+            CoffeeSize.TALL -> 0.05
+            CoffeeSize.GRANDE -> 0.10
+            CoffeeSize.VENTI -> 0.15
+        }
     }
 
     override var description: String

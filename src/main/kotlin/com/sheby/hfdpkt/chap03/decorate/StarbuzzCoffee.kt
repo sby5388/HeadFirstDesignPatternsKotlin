@@ -22,6 +22,8 @@ fun main() {
     houseBlend = Whip(houseBlend)
 
     println("${houseBlend.description} $${houseBlend.cost()}")
+    houseBlend.size = CoffeeSize.VENTI
+    println("${houseBlend.description} $${houseBlend.cost()}")
 
 
 }

@@ -5,6 +5,8 @@ package com.sheby.hfdpkt.chap03.decorate
  */
 abstract class Beverage {
 
+    open var size: CoffeeSize = CoffeeSize.TALL
+
     open var description = "Unknown Beverage"
 
     /**
